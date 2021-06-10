@@ -1,0 +1,357 @@
+testname: Comparing PCA modelled HRTF and Ambisonic Spherical Harmonics
+testId: sh_moon
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: false
+remoteService: service/write.php
+pages:
+    - type: generic
+      id: first_page
+      name: Welcome
+      content: This is a listening test for the evaluation of <b>PCA modelled HRTF</b> and <b>Ambisonic Spherical Harmonics </b> in the binaural system. </br></br> During the test, rendered samples will be given, you can play the sound as much as you want. </br> After listening to the sound sample, place the corresponding dot in the position where you hear the sound from. </br></br> Please use the headphones for the listening test </br></br> All the test information is anonymous. </br> this listening test complies with GDPR. </br>If you want to withdraw your test result, please send a email to the address </b> s.moon3@unimail.derby.ac.uk. </b></b> When you are ready, press the 'NEXT'button to start the test
+
+    - type: volume
+      id: volumt settings
+      name: Headphones volume settings
+      content: Adjust your headphone volume before the test.
+      stimulus: configs/resources/audio/moon/beer.wav
+      defaultVolume: 0.5
+
+    - type: spatial
+      id : pca_sound effect_glass1
+      name: Localisation 1
+      content: Now you have to locate different stimuli. Play back a stimulus and place the spheres, with the colors of the buttons in the according box with the player, to the positions where you perceive sound sources. The number of spheres should fit the number of perceived sound sources and it is not important which sphere represents which sound source. Place the spheres simply by clicking into the scene
+      framerate: 100
+      roomMeasurements: [600, 240, 500] # width, height, length
+      stimuli:
+          C1: configs/resources/audio/moon/beer1_270_0.wav
+          C2: configs/resources/audio/moon/beer1_90_0.wav
+          C3: configs/resources/audio/moon/beer1_0_0.wav
+      responses:
+        - type: localization
+          name: pca1
+          label: A
+          color: 0xff0000
+          stimulus: C1
+          position: [100,100,0]
+          size: 10
+        - type: localization
+          name: pca2
+          label: B
+          color: 0xff5500
+          stimulus: C2
+          position: [-100,100,0]
+          size: 10
+        - type: localization
+          name: pca3
+          label: C
+          color: 0x00ff00
+          stimulus: C3
+          position: [50,50,0]
+          size: 10
+
+
+
+      views:
+        - view: front
+        - view: top
+
+          position: [400,50,-400]
+      objects:
+        - type: listener
+          position: [0,100,0]
+          rotation: [0,0,180]
+        - type: custom
+          path: lib/webmushra/spatial/resources/listener_head.dae
+          position: [0,50,0]
+          rotation: [0,0,180]
+          scale: 5
+
+    - type: spatial
+      id : pca_sound effect_glass2
+      name: Localisation 2
+      content: Now you have to locate different stimuli. Play back a stimulus and place the spheres, with the colors of the buttons in the according box with the player, to the positions where you perceive sound sources. The number of spheres should fit the number of perceived sound sources and it is not important which sphere represents which sound source. Place the spheres simply by clicking into the scene
+      framerate: 100
+      roomMeasurements: [600, 240, 500] # width, height, length
+      stimuli:
+          C1: configs/resources/audio/moon/beer1_90_minus30.wav
+          C2: configs/resources/audio/moon/beer1_90_30.wav
+          C3: configs/resources/audio/moon/beer1_90_80.wav
+      responses:
+        - type: localization
+          name: pca4
+          label: A
+          color: 0xff0000
+          stimulus: C1
+          position: [100,100,0]
+          size: 10
+        - type: localization
+          name: pca5
+          label: B
+          color: 0xff5500
+          stimulus: C2
+          position: [-100,100,0]
+          size: 10
+        - type: localization
+          name: pca6
+          label: C
+          color: 0x00ff00
+          stimulus: C3
+          position: [50,50,0]
+          size: 10
+
+
+
+      views:
+        - view: front
+        - view: top
+
+          position: [400,50,-400]
+      objects:
+        - type: listener
+          position: [0,100,0]
+          rotation: [0,0,180]
+        - type: custom
+          path: lib/webmushra/spatial/resources/listener_head.dae
+          position: [0,50,0]
+          rotation: [0,0,180]
+          scale: 5
+
+    - type: spatial
+      id : pca_sound effect_glass3
+      name: Localisation 3
+      content: Now you have to locate different stimuli. Play back a stimulus and place the spheres, with the colors of the buttons in the according box with the player, to the positions where you perceive sound sources. The number of spheres should fit the number of perceived sound sources and it is not important which sphere represents which sound source. Place the spheres simply by clicking into the scene
+      framerate: 100
+      roomMeasurements: [600, 240, 500] # width, height, length
+      stimuli:
+          C1: configs/resources/audio/moon/beer1_270_80.wav
+          C2: configs/resources/audio/moon/beer1_270_40.wav
+          C3: configs/resources/audio/moon/beer1_270_minus30.wav
+      responses:
+        - type: localization
+          name: pca7
+          label: A
+          color: 0xff0000
+          stimulus: C1
+          position: [100,100,0]
+          size: 10
+        - type: localization
+          name: pca8
+          label: B
+          color: 0xff5500
+          stimulus: C2
+          position: [-100,100,0]
+          size: 10
+        - type: localization
+          name: pca9
+          label: C
+          color: 0x00ff00
+          stimulus: C3
+          position: [50,50,0]
+          size: 10
+
+
+
+      views:
+        - view: front
+        - view: top
+
+          position: [400,50,-400]
+      objects:
+        - type: listener
+          position: [0,100,0]
+          rotation: [0,0,180]
+        - type: custom
+          path: lib/webmushra/spatial/resources/listener_head.dae
+          position: [0,50,0]
+          rotation: [0,0,180]
+          scale: 5
+
+    - type: spatial
+      id : Ambisonic_sound effect_glass1
+      name: Localisation 4
+      content: Now you have to locate different stimuli. Play back a stimulus and place the spheres, with the colors of the buttons in the according box with the player, to the positions where you perceive sound sources. The number of spheres should fit the number of perceived sound sources and it is not important which sphere represents which sound source. Place the spheres simply by clicking into the scene
+      framerate: 100
+      roomMeasurements: [600, 240, 500] # width, height, length
+      stimuli:
+          C1: configs/resources/audio/moon/beer2_00_00.wav
+          C2: configs/resources/audio/moon/beer2_90_00.wav
+          C3: configs/resources/audio/moon/beer2_270_00.wav
+      responses:
+        - type: localization
+          name: ambi1
+          label: A
+          color: 0xff0000
+          stimulus: C1
+          position: [100,100,0]
+          size: 10
+        - type: localization
+          name: ambi2
+          label: B
+          color: 0xff5500
+          stimulus: C2
+          position: [-100,100,0]
+          size: 10
+        - type: localization
+          name: ambi3
+          label: C
+          color: 0x00ff00
+          stimulus: C3
+          position: [50,50,0]
+          size: 10
+
+
+
+      views:
+        - view: front
+        - view: top
+
+          position: [400,50,-400]
+      objects:
+        - type: listener
+          position: [0,100,0]
+          rotation: [0,0,180]
+        - type: custom
+          path: lib/webmushra/spatial/resources/listener_head.dae
+          position: [0,50,0]
+          rotation: [0,0,180]
+          scale: 5
+
+    - type: spatial
+      id : Ambi_sound effect_glass2
+      name: Localisation 5
+      content: Now you have to locate different stimuli. Play back a stimulus and place the spheres, with the colors of the buttons in the according box with the player, to the positions where you perceive sound sources. The number of spheres should fit the number of perceived sound sources and it is not important which sphere represents which sound source. Place the spheres simply by clicking into the scene
+      framerate: 100
+      roomMeasurements: [600, 240, 500] # width, height, length
+      stimuli:
+          C1: configs/resources/audio/moon/beer2_90_80.wav
+          C2: configs/resources/audio/moon/beer2_90_30.wav
+          C3: configs/resources/audio/moon/beer2_90_minus30.wav
+      responses:
+        - type: localization
+          name: ambi4
+          label: A
+          color: 0xff0000
+          stimulus: C1
+          position: [100,100,0]
+          size: 10
+        - type: localization
+          name: ambi5
+          label: B
+          color: 0xff5500
+          stimulus: C2
+          position: [-100,100,0]
+          size: 10
+        - type: localization
+          name: ambi6
+          label: C
+          color: 0x00ff00
+          stimulus: C3
+          position: [50,50,0]
+          size: 10
+
+
+
+      views:
+        - view: front
+        - view: top
+
+          position: [400,50,-400]
+      objects:
+        - type: listener
+          position: [0,100,0]
+          rotation: [0,0,180]
+        - type: custom
+          path: lib/webmushra/spatial/resources/listener_head.dae
+          position: [0,50,0]
+          rotation: [0,0,180]
+          scale: 5
+
+    - type: spatial
+      id : ambi_sound effect_glass3
+      name: Localisation 6
+      content: Now you have to locate different stimuli. Play back a stimulus and place the spheres, with the colors of the buttons in the according box with the player, to the positions where you perceive sound sources. The number of spheres should fit the number of perceived sound sources and it is not important which sphere represents which sound source. Place the spheres simply by clicking into the scene
+      framerate: 100
+      roomMeasurements: [600, 240, 500] # width, height, length
+      stimuli:
+          C1: configs/resources/audio/moon/beer2_270_minus30.wav
+          C2: configs/resources/audio/moon/beer2_270_40.wav
+          C3: configs/resources/audio/moon/beer2_270_80.wav
+      responses:
+        - type: localization
+          name: ambi7
+          label: A
+          color: 0xff0000
+          stimulus: C1
+          position: [100,100,0]
+          size: 10
+        - type: localization
+          name: ambi8
+          label: B
+          color: 0xff5500
+          stimulus: C2
+          position: [-100,100,0]
+          size: 10
+        - type: localization
+          name: ambi9
+          label: C
+          color: 0x00ff00
+          stimulus: C3
+          position: [50,50,0]
+          size: 10
+
+
+
+      views:
+        - view: front
+        - view: top
+
+          position: [400,50,-400]
+      objects:
+        - type: listener
+          position: [0,100,0]
+          rotation: [0,0,180]
+        - type: custom
+          path: lib/webmushra/spatial/resources/listener_head.dae
+          position: [0,50,0]
+          rotation: [0,0,180]
+          scale: 5
+    - type: finish
+      name: Thank you
+      content: Thank you for attending
+      showResults: false
+      writeResults: true
+      questionnaire:
+          - type: number
+            label: Age
+            name: age
+            min: 0
+            max: 100
+            default: 30
+
+
+
+          - type: likert
+            name: expert_spatial
+            label: Are you an expert listener in spatial audio?
+            response:
+             - value: no
+               label: No
+             - value: yes
+               label: Yes
+          - type: likert
+            name: listening_test_experience
+            label: Have you taken part in a listening test about spatial attributes yet?
+            response:
+             - value: no
+               label: No
+             - value: yes
+               label: Yes
+          - type: likert
+            name: professional
+            label: Do you have a background in professional audio (e.g. sound/recording engineer, researcher)?
+            response:
+             - value: no
+               label: No
+             - value: yes
+               label: Yes
